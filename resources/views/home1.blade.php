@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <p>pla que tal.</p>
+  
 @stop
 
 @section('css')

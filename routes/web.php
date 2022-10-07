@@ -28,3 +28,7 @@ Route::get('/home1', function () {
 Route::get('/admin/list', function () {
     return view('layouts.list');
 });
+
+Route::get('test', function () {
+    return view('test');
+});
