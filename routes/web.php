@@ -32,3 +32,7 @@ Route::get('/admin/list', function () {
 Route::get('test', function () {
     return view('test');
 });
+
+Route::get('products', function () {
+    return view('app.products');
+});
