@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
-
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -45,5 +45,34 @@ class ProductController extends Controller
 
       return response()->json($product, 201);
 
+    }
+
+    public function update(Request $request, $id)
+    {
+        dd('oi');
+        $product = $this->product->find($id);
+
+        if($request->file('image')){
+            Storage::disk('public')->delete($product->image);
+        }
+
+        $image = $request->file('image');
+        $imageUrn = $image->store('image/product', 'public');
+
+        $product->fill($request->all());
+        $product->image = $imageUrn;
+
+        $product->save();
+
+        return response()->json(['msg' => 'Product successfully edited'], 201);
+
+    }
+
+    public function destroy($id)
+    {
+        $product = $this->product->find($id);
+        $product->delete();
+
+        return response()->json(['msg' => 'Deleted']);
     }
 }
