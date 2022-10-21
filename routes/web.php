@@ -25,8 +25,6 @@ Route::get('/home1', function () {
     return view('home1');
 });
 
-<<<<<<< HEAD
-=======
 Route::get('/admin/list', function () {
     return view('layouts.list');
 });
@@ -38,4 +36,3 @@ Route::get('test', function () {
 Route::get('products', function () {
     return view('app.products');
 });
->>>>>>> feature1
