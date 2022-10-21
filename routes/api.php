@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
@@ -18,6 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+<<<<<<< HEAD
 
 Route::prefix('v1')->group(function(){
    // Route::get('/product/list', [App\Http\Controllers\ProductController::class, 'index'])->name('list');
@@ -25,3 +27,12 @@ Route::prefix('v1')->group(function(){
   //  Route::post('/product', [ProductController::class, 'update'])->name('update');
     Route::resource('/product', ProductController::class);
 });
+=======
+Route::prefix('v1')->name('v1')->group(function () {
+    Route::get('product/list',[ProductController::class, 'index']);
+  
+    // Route::get('product', [ProductController::class, 'index'])->name('list_product');
+});
+
+Route::get('product/list', [ProductController::class, 'index']);
+>>>>>>> feature1
