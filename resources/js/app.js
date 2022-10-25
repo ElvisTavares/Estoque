@@ -17,9 +17,11 @@ const app = createApp({});
 
 import ExampleComponent from './components/ExampleComponent.vue';
 import List  from './components/List.vue';
+import Product from './components/Product.vue';
 
 app.component('example-component', ExampleComponent);
 app.component('list-component', List);
+app.component('product-component', Product);
 
 /**
  * The following block of code may be used to automatically register your
