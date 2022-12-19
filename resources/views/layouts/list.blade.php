@@ -11,7 +11,7 @@
  @vite([ 'resources/js/app.js'])   
  <div id='app'>
     
- <list-component></list-component>
+ <product-component></product-component>
  </div>
 @stop
 

@@ -3,6 +3,6 @@
 @section('content')
   
  <div id='app'>
- <list-component></list-component>
+ <product-component></product-component>
  </div>
 @stop

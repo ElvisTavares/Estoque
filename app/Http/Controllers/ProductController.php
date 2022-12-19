@@ -49,7 +49,6 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
-        dd('oi');
         $product = $this->product->find($id);
 
         if($request->file('image')){

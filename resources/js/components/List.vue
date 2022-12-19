@@ -13,7 +13,7 @@
             <tr>
                 <th scope="row">1</th>
                     <td>Goku</td>
-                    <td>30</td>
+                    <td>33333333</td>
                     <td>5</td>
                     <td><img src="https://cf.shopee.com.br/file/c658e03a00940ddf857cb13017151ac8" alt=""  width="50" height="50"></td>
             </tr>

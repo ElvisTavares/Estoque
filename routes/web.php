@@ -29,10 +29,18 @@ Route::get('/admin/list', function () {
     return view('layouts.list');
 });
 
+Route::get('/admin/insert', function () {
+    return view('layouts.insert');
+});
+
 Route::get('test', function () {
     return view('test');
 });
 
 Route::get('products', function () {
     return view('app.products');
+});
+
+Route::get('products/insert', function () {
+    return view('app.insert');
 });
