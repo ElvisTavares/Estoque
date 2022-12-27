@@ -16,20 +16,24 @@ import { createApp } from 'vue';
 const app = createApp({});
 
 import ExampleComponent from './components/ExampleComponent.vue';
-import List  from './components/List.vue';
-import Card from './components/Card.vue';
 import Product from './components/Product.vue';
-import Table from './components/Table.vue';
-import InsertProduct from './components/InsertProduct.vue';
 import InputContainer from './components/InputContainer.vue';
+import Card from './components/Card.vue';
+import Table from './components/Table.vue';
+import List  from './components/List.vue';
+import InsertProduct from './components/InsertProduct.vue';
+
 
 app.component('example-component', ExampleComponent);
 app.component('product-component', Product);
-app.component('list-component', List);
+app.component('input-container-component', InputContainer);
 app.component('card-component', Card);
 app.component('table-component', Table);
+app.component('list-component', List);
+
+
 app.component('insert-component', InsertProduct);
-app.component('input-container-component', InputContainer);
+
 
 
 

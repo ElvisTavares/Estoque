@@ -2,21 +2,22 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-
                 <!--LIST-->
                 <card-component>
                     <template v-slot:content>
                             <table-component
                             :data="products"
-                            :titles="['ID', 'Name', 'Image']"
+                            :titles="{
+                                id: {title: 'ID', type: 'text'},
+                                name: {title: 'Nome', type: 'text'},
+                                description: {title: 'Descrição', type: 'text'},
+                                image: {title: 'Imagem', type: 'image'},
+                            }"
                             >
-
                             </table-component>
                     </template>
                 </card-component>
                 <!--LIST-->
-
-
     </div>
          </div>
              </div>
