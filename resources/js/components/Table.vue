@@ -3,7 +3,6 @@
         <thead>
             <tr>
                 <th scope="col" v-for="t, key in titles" :key="key">{{t.title}}</th>
-              
             </tr>
         </thead>
         <tbody>
@@ -14,7 +13,6 @@
                         <img :src="'/storage/'+value" alt="" width="50"
                         height="50">
                     </span>
-                   
                 </td>
             </tr>
         </tbody>
