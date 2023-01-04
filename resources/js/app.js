@@ -22,6 +22,7 @@ import Card from './components/Card.vue';
 import Table from './components/Table.vue';
 import List  from './components/List.vue';
 import InsertProduct from './components/InsertProduct.vue';
+import Alert from './components/Alert.vue';
 
 
 app.component('example-component', ExampleComponent);
@@ -30,6 +31,7 @@ app.component('input-container-component', InputContainer);
 app.component('card-component', Card);
 app.component('table-component', Table);
 app.component('list-component', List);
+app.component('alert-component', Alert);
 
 
 app.component('insert-component', InsertProduct);

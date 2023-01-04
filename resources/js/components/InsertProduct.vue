@@ -1,4 +1,6 @@
 <template>
+       <alert-component type="success" :details="transactionDetails" title="Cadastro realizado com sucesso" v-if="transactionStatus == 'adcionado'"></alert-component>
+       <alert-component type="danger" :details="transactionDetails" title="Erro ao tentar inserir" v-if="transactionStatus == 'erro'"></alert-component>
 
     <div class="form-group">
         <input-container-component titulo="Nome do Produto" id="newName" id-help="newNameHelp" texto-ajuda="Informe o nome do produto">
@@ -16,14 +18,14 @@
 
     <div class="form-group">
         <input-container-component titulo="Preço de compra" id="newSalePrice" id-help="newSalePriceHelp" texto-ajuda="Informe o preço que custou o produto">
-            <input type="number" class="form-control" id="novoPrecoCompra" aria-describedby="novoPrecoCompraHelp" placeholder="Preço de compra do produto" v-model="salePrice">
+            <input type="number" class="form-control" id="novoPrecoCompra" aria-describedby="novoPrecoCompraHelp" placeholder="Preço de compra do produto" v-model="purchasePrice">
         </input-container-component>
         <!-- {{salePrice}} -->
     </div>
 
     <div class="form-group">
         <input-container-component titulo="Preço de venda" id="newPurchasePrice" id-help="newPurchasePriceHelp" texto-ajuda="Informe o preço de venda do produto">
-            <input type="number" class="form-control" id="novoPrecoVenda" aria-describedby="novoPrecoVendaHelp" placeholder="Preço de venda do produto" v-model="purchasePrice">
+            <input type="number" class="form-control" id="novoPrecoVenda" aria-describedby="novoPrecoVendaHelp" placeholder="Preço de venda do produto" v-model="salePrice">
         </input-container-component>
         <!-- {{purchasePrice}} -->
     </div>
@@ -57,7 +59,10 @@ export default {
             purchasePrice: '',
             salePrice: 0,
             quantity: 0,
-            fileImage: []
+            fileImage: [],
+            transactionStatus: '',
+            transactionDetails: []
+            
         }
     },
     methods: {
@@ -86,9 +91,14 @@ export default {
 
             axios.post(this.urlBase, formData, config)
                 .then(response => {
+                    this.transactionStatus = 'adcionado'
+                    this.transactionDetails = response
                     console.log(response)
                 })
                 .catch(errors => {
+                    this.transactionStatus = 'erro'
+                    this.transactionDetails = errors.response
+                    //errors.response.data.message
                     console.log(errors)
                 })
         }
